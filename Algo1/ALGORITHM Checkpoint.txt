@@ -1,0 +1,30 @@
+ALGORITHM Checkpoint 
+VAR
+ nbw,nbv : INTEGER := 0;
+ l : INTEGER := 0;
+ s : String ; 
+
+BEGIN
+ Read(s);
+   FOR i FROM 1 TO length(s) DO
+      WHILE( s[i] <> '.' ) DO
+         l=l+1;  
+      END WHILE 
+   END_FOR
+
+   FOR i FROM 1 TO length(s) DO
+      IF(s[i]={'o','i','y','e','a','u' })
+         nbv=nbv+1;
+      END_IF 
+   END_FOR
+    
+   FOR i FROM 1 TO length(s) DO
+      IF(s[i]={' '})
+         nbw=nbw+1;
+      END_IF 
+   END_FOR
+
+   Write(l);
+   Write(nbw);
+   Write(nbv);
+END

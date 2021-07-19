@@ -1,0 +1,30 @@
+ALGORITHM Sum_sets
+VAR
+ set1 : ARRAY_OF INTEGER[4];
+ set2 : ARRAY_OF INTEGER[5];
+ i,j : INTEGER ;
+ sum : INTEGER := 0;
+
+BEGIN 
+
+  set1:={3,1,7,9};
+  write("first set is : ", set1)
+  set2:={2,4,1,9,3};
+  write("second set is : ", set2)
+  FOR i FROM 1 TO 4 STEP 1 DO
+    FOR j FROM 1 TO 5 STEP 1 DO
+     IF(set1[i] = set2[j]) THEN 
+      sum=sum+set1[i];
+     END IF    
+    END FOR
+  END FOR 
+  FOR i FROM 1 TO 5 STEP 1 DO
+    FOR j FROM 1 TO 4 STEP 1 DO
+     IF(set2[i] = set1[j]) THEN 
+      sum=sum+set2[i];
+     END IF    
+    END FOR
+  END FOR
+
+  write("Sum of overlapping elements:",sum)
+END

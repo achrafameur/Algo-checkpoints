@@ -1,0 +1,49 @@
+ALGORITHM Sum_sets
+VAR
+ htab1 : HASH_TABLE<INTEGER,INTEGER>;
+ set1 : ARRAY_OF INTEGER[4]={3,1,7,9};
+ set2 : ARRAY_OF INTEGER[5]={2,4,1,9,3};
+ i,j,count : INTEGER ;
+ sum : INTEGER := 0;
+
+BEGIN 
+ htab1 : HASH_TABLE<INTEGER,INTEGER>;
+ 
+ Read(set1);
+ Read(set2);
+
+  
+   FOR i FROM 1 TO 4 STEP 1 DO
+     IF( htab1.lookup(set1[i]) = TRUE ) THEN 
+       count :=htab1.get(set1[i]);
+       htab1.insert(set1[i],count+1);
+     ELSE 
+       htab1.insert(set1[i],1);
+     END IF    
+   END FOR
+   
+   FOR j FROM 1 TO 5 STEP 1 DO
+     IF( htab1.lookup(set2[j]) = TRUE ) THEN 
+       count :=htab1.get(set2[j]);
+       htab1.insert(set2[j],count+1);
+     ELSE 
+       htab1.insert(set2[j],1);
+     END IF    
+   END FOR 
+  
+  FOR i FROM 1 TO 4 STEP 1 DO
+    IF (htab1.get(set1[i])<> 1) THEN
+       sum:=sum+set1[i];
+       BREAK;
+    END IF
+  END FOR  
+  
+  FOR j FROM 1 TO 5 STEP 1 DO
+    IF (htab1.get(set2[j])<> 1) THEN
+       sum:=sum+set2[j];
+       BREAK;
+    END IF
+  END FOR    
+
+  write("Sum is =",sum)
+END

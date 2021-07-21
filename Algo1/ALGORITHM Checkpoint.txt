@@ -1,11 +1,12 @@
 ALGORITHM Checkpoint 
 VAR
  nbw,nbv : INTEGER := 0;
- l : INTEGER := 0;
+ l : INTEGER := 1;
  s : String ; 
 
 BEGIN
- Read(s);
+   Read(s);
+   
    FOR i FROM 1 TO length(s) DO
       WHILE( s[i] <> '.' ) DO
          l=l+1;  
@@ -24,7 +25,7 @@ BEGIN
       END_IF 
    END_FOR
 
-   Write(l);
-   Write(nbw);
-   Write(nbv);
+   Write("The length of the sentence is " ,l);
+   Write("The number of words in the sentence is ", nbw);
+   Write("The number of vowels in the sentence is ",nbv);
 END

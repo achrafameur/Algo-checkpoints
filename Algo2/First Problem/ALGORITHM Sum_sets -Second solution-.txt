@@ -4,7 +4,8 @@ VAR
  set1 : ARRAY_OF INTEGER[];
  set2 : ARRAY_OF INTEGER[];
  dist_tab : ARRAY_OF INTEGER[];
- i,j,count : INTEGER ;
+ i,j :INTEGER ;
+ count : INTEGER := 1; 
  sum : INTEGER := 0;
 
 BEGIN 

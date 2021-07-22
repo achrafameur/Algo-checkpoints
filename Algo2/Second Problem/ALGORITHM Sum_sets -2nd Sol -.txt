@@ -10,9 +10,34 @@ VAR
 
 BEGIN 
  htab1 : HASH_TABLE<INTEGER,INTEGER>;
-
- Read(set1);
- Read(set2);
+ dist := 0;
+ read(set1[0])
+ FOR i FROM 1 TO set1.length DO
+    while(dist = 1) DO
+      write("write the Element :");
+      Read(set1[i])
+      dist:=0;
+      FOR j FROM 0 TO i DO
+         IF (set1[i]=set1[j]) THEN
+           dist:=1;
+         END IF
+      END FOR
+    END WHILE
+ END FOR   
+ 
+ read(set2[0])
+ FOR i FROM 1 TO set2.length DO
+    while(dist = 1) DO
+      write("write the Element :");
+      Read(set2[i])
+      dist:=0;
+      FOR j FROM 0 TO i DO
+         IF (set2[i]=set2[j]) THEN
+           dist:=1;
+         END IF
+      END FOR
+    END WHILE
+ END FOR   
  
   
    FOR i FROM 1 TO set1.length STEP 1 DO

@@ -15,7 +15,6 @@ BEGIN
   
    FOR i FROM 1 TO 4 STEP 1 DO
      IF( htab1.lookup(set1[i]) = TRUE ) THEN 
-       count :=htab1.get(set1[i]);
        htab1.insert(set1[i],count+1);
      ELSE 
        htab1.insert(set1[i],1);
@@ -24,26 +23,23 @@ BEGIN
    
    FOR j FROM 1 TO 5 STEP 1 DO
      IF( htab1.lookup(set2[j]) = TRUE ) THEN 
-       count :=htab1.get(set2[j]);
        htab1.insert(set2[j],count+1);
      ELSE 
        htab1.insert(set2[j],1);
      END IF    
    END FOR 
   
-  FOR i FROM 1 TO 4 STEP 1 DO
-    IF (htab1.get(set1[i])=1) THEN
-       sum:=sum+set1[i];
-       BREAK;
-    END IF
-  END FOR  
   
-  FOR j FROM 1 TO 5 STEP 1 DO
-    IF (htab1.get(set2[j])=1) THEN
-       sum:=sum+set2[j];
-       BREAK;
-    END IF
-  END FOR    
+  
+     IF (htab1.get(set1[i])=1) THEN
+        sum:=sum+set1[i];
+        BREAK;
+     END IF 
+  
+     IF (htab1.get(set2[j])=1) THEN
+        sum:=sum+set2[j];
+        BREAK;
+     END IF 
 
   write("Sum is =",sum)
 END

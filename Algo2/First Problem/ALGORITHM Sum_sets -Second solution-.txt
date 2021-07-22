@@ -37,7 +37,7 @@ BEGIN
   
   
     FOR i FROM 1 TO dist_tab.length STEP 1 DO
-     IF (htab1.get(count =1) THEN
+     IF (htab1.get(dist_tab[i]) =1) THEN
         sum:=sum+dist_tab[i];
      END IF 
     END FOR 

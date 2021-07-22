@@ -15,7 +15,7 @@ BEGIN
  Read(set2);
  
   
-   FOR i FROM 1 TO 4 STEP 1 DO
+   FOR i FROM 1 TO set1.length STEP 1 DO
      IF( htab1.lookup(set1[i]) = TRUE ) THEN 
        count := count +1;
        htab1.insert(set1[i],count);
@@ -25,7 +25,7 @@ BEGIN
      END IF    
    END FOR
    
-   FOR j FROM 1 TO 5 STEP 1 DO
+   FOR j FROM 1 TO set2.length STEP 1 DO
      IF( htab1.lookup(set2[j]) = TRUE ) THEN 
        count := count +1;
        htab1.insert(set2[j],count);

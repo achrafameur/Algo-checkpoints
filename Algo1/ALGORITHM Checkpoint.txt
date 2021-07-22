@@ -2,10 +2,19 @@ ALGORITHM Checkpoint
 VAR
  nbw,nbv : INTEGER := 0;
  l : INTEGER := 1;
- s : String ; 
+ s : String ;
+ c : CHAR ;
 
 BEGIN
-   Read(s);
+    WHILE (TRUE) DO
+        write('Type a CHAR :');
+        read(c);
+
+        IF (C='.') THEN
+            BREAK
+        END_IF
+         s:=s+c;
+    END_WHILE
    
    FOR i FROM 1 TO length(s) DO
       WHILE( s[i] <> '.' ) DO
